@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <world name="pick_place">
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><plane><normal>0 0 1</normal><size>10 10</size></plane></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><plane><normal>0 0 1</normal><size>10 10</size></plane></geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Same size and pose as the table in the MoveIt planning scene. -->
+    <model name="table">
+      <static>true</static>
+      <pose>0.55 0 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.4 0.9 0.2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.4 0.9 0.2</size></box></geometry>
+          <material>
+            <ambient>0.55 0.35 0.2 1</ambient>
+            <diffuse>0.55 0.35 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Cube and basket poses match the defaults of the pick_place node. -->
+    <model name="cube_1">
+      <pose>0.45 -0.3 0.22 0 0 0</pose>
+      <link name="link">
+        <inertial>
+          <mass>0.05</mass>
+          <inertia>
+            <ixx>1.33e-05</ixx><iyy>1.33e-05</iyy><izz>1.33e-05</izz>
+            <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry><box><size>0.04 0.04 0.04</size></box></geometry>
+          <surface>
+            <friction>
+              <ode><mu>1.5</mu><mu2>1.5</mu2></ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.04 0.04 0.04</size></box></geometry>
+          <material>
+            <ambient>0.8 0.1 0.1 1</ambient>
+            <diffuse>0.8 0.1 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="cube_2">
+      <pose>0.62 -0.3 0.22 0 0 0</pose>
+      <link name="link">
+        <inertial>
+          <mass>0.05</mass>
+          <inertia>
+            <ixx>1.33e-05</ixx><iyy>1.33e-05</iyy><izz>1.33e-05</izz>
+            <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry><box><size>0.04 0.04 0.04</size></box></geometry>
+          <surface>
+            <friction>
+              <ode><mu>1.5</mu><mu2>1.5</mu2></ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.04 0.04 0.04</size></box></geometry>
+          <material>
+            <ambient>0.1 0.7 0.1 1</ambient>
+            <diffuse>0.1 0.7 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="cube_3">
+      <pose>0.53 -0.12 0.22 0 0 0</pose>
+      <link name="link">
+        <inertial>
+          <mass>0.05</mass>
+          <inertia>
+            <ixx>1.33e-05</ixx><iyy>1.33e-05</iyy><izz>1.33e-05</izz>
+            <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry><box><size>0.04 0.04 0.04</size></box></geometry>
+          <surface>
+            <friction>
+              <ode><mu>1.5</mu><mu2>1.5</mu2></ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.04 0.04 0.04</size></box></geometry>
+          <material>
+            <ambient>0.1 0.2 0.8 1</ambient>
+            <diffuse>0.1 0.2 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Open basket: 0.2 m square, 0.08 m high walls, 0.01 m thick. -->
+    <model name="basket">
+      <static>true</static>
+      <pose>0.55 0.25 0.2 0 0 0</pose>
+      <link name="link">
+        <collision name="floor_collision">
+          <pose>0 0 0.005 0 0 0</pose>
+          <geometry><box><size>0.2 0.2 0.01</size></box></geometry>
+        </collision>
+        <visual name="floor_visual">
+          <pose>0 0 0.005 0 0 0</pose>
+          <geometry><box><size>0.2 0.2 0.01</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.3 0.3 0.35 1</diffuse>
+          </material>
+        </visual>
+        <collision name="wall_front_collision">
+          <pose>0.095 0 0.04 0 0 0</pose>
+          <geometry><box><size>0.01 0.2 0.08</size></box></geometry>
+        </collision>
+        <visual name="wall_front_visual">
+          <pose>0.095 0 0.04 0 0 0</pose>
+          <geometry><box><size>0.01 0.2 0.08</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.3 0.3 0.35 1</diffuse>
+          </material>
+        </visual>
+        <collision name="wall_back_collision">
+          <pose>-0.095 0 0.04 0 0 0</pose>
+          <geometry><box><size>0.01 0.2 0.08</size></box></geometry>
+        </collision>
+        <visual name="wall_back_visual">
+          <pose>-0.095 0 0.04 0 0 0</pose>
+          <geometry><box><size>0.01 0.2 0.08</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.3 0.3 0.35 1</diffuse>
+          </material>
+        </visual>
+        <collision name="wall_left_collision">
+          <pose>0 0.095 0.04 0 0 0</pose>
+          <geometry><box><size>0.2 0.01 0.08</size></box></geometry>
+        </collision>
+        <visual name="wall_left_visual">
+          <pose>0 0.095 0.04 0 0 0</pose>
+          <geometry><box><size>0.2 0.01 0.08</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.3 0.3 0.35 1</diffuse>
+          </material>
+        </visual>
+        <collision name="wall_right_collision">
+          <pose>0 -0.095 0.04 0 0 0</pose>
+          <geometry><box><size>0.2 0.01 0.08</size></box></geometry>
+        </collision>
+        <visual name="wall_right_visual">
+          <pose>0 -0.095 0.04 0 0 0</pose>
+          <geometry><box><size>0.2 0.01 0.08</size></box></geometry>
+          <material>
+            <ambient>0.3 0.3 0.35 1</ambient>
+            <diffuse>0.3 0.3 0.35 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
