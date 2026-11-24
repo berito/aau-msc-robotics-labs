@@ -29,7 +29,7 @@ assistant: Mohammed Sraj.
    - The Lab 1 robot driven in Gazebo by voice and by hand
 - [Lab 6: Localization and navigation](lab_06)
    - AMCL localization on the map from Lab 2
-   - Navigation to goals with Nav2
+   - Navigation to goals with Nav2, from RViz and from a waypoint patrol node
 
 ## Prerequisites
 
