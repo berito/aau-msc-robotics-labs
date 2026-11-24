@@ -6,13 +6,21 @@ log/
 # Python
 __pycache__/
 *.pyc
+.venv/
+
+# Model weights, downloaded by each lab's setup script
+*.pt
 
 # Editor settings and indexes, specific to each machine
 .vscode/
 .idea/
+*.swp
+*~
 
-# Python virtual environments
-.venv/
+# TF tree written by ros2 run tf2_tools view_frames
+frames*.pdf
+frames*.gv
 
-# YOLO weights, downloaded by setup.sh
-*.pt
+# Operating system files
+.DS_Store
+Thumbs.db

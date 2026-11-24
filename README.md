@@ -1,53 +1,88 @@
 # Robotics and Intelligent Systems Labs
 
-ROS 2 and Gazebo lab material for **Robotics and Intelligent Systems**, a course in the MSc in
-Artificial Intelligence at Addis Ababa University, academic year 2026.
+[![Addis Ababa University](https://img.shields.io/badge/Addis_Ababa_University-aau.edu.et-2A7CBD)](https://www.aau.edu.et)
+![ROS 2 Humble](https://img.shields.io/badge/ROS_2-Humble-22314E?logo=ros)
+![Gazebo Harmonic](https://img.shields.io/badge/Gazebo-Harmonic-F58113)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue)
 
-| Program | Course | Lecturer | Lab Assistant |
-|---------|--------|----------|---------------|
-| MSc in Artificial Intelligence | Robotics and Intelligent Systems | Adane Letta (PhD) | Mohammed Sraj (MSc AI) |
+ROS 2 and Gazebo labs for **Robotics and Intelligent Systems**, a course in the MSc in Artificial
+Intelligence at Addis Ababa University, academic year 2026. Lecturer: Adane Letta (PhD). Lab
+assistant: Mohammed Sraj.
 
-Each lab session has a folder of its own, with its ROS 2 packages, a README that walks through them,
-and an exercise.
+## Labs
 
-| Lab | Topic |
-|-----|-------|
-| [lab_01](lab_01) | ROS 2 and custom robot simulation: ROS 2 concepts, a differential-drive robot in Gazebo, and nodes that use topics, services and actions |
-| [lab_02](lab_02) | Perception, sensor fusion and SLAM: object detection and segmentation with pretrained YOLO models on the robot's camera |
+1. [Lab 1: ROS 2 and custom robot simulation](lab_01)
+   - ROS 2 concepts on turtlesim: nodes, topics, services, parameters, actions, launch files
+   - A differential-drive robot with a lidar and a camera, described in URDF and simulated in Gazebo
+   - Python nodes that use a custom message, service and action
+2. [Lab 2: Perception, sensor fusion and SLAM](lab_02)
+   - Object detection and segmentation with pretrained YOLOv8 models on the robot's camera
+   - Detections and masks published as ROS 2 messages and shown in RViz
+   - A safety stop that halts the robot when an object is in its path
+3. [Lab 3: Motion planning and control](lab_03)
+   - Pick-and-place with a Franka FR3 arm and MoveIt 2, on mock hardware and in Gazebo
+   - Joint-space goals, pose goals, Cartesian paths and attached collision objects
+
+## Prerequisites
+
+- Python programming basics
+- Linux command line basics
 
 ## Requirements
 
-- Ubuntu 22.04 with ROS 2 Humble
-- Gazebo Harmonic with its ROS 2 packages (`ros-humble-ros-gzharmonic`)
+- Ubuntu 22.04 with ROS 2 Humble (`ros-humble-desktop`)
+- Gazebo Harmonic and its ROS 2 packages, from the Gazebo apt repository:
 
-Each lab's README lists anything else it needs.
+```bash
+sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+sudo apt update
+sudo apt install ros-humble-ros-gzharmonic
+```
 
-## Getting started
+Install with apt, not `rosdep install`: rosdep pulls in `ros-humble-ros-gz`, which conflicts with
+Harmonic.
 
-Clone the repository into the `src` folder of a ROS 2 workspace:
+Each lab's README lists the packages it adds.
+
+## Installation
 
 ```bash
 source /opt/ros/humble/setup.bash
 mkdir -p ~/ros2_ws/src && cd ~/ros2_ws/src
-git clone https://github.com/berito/robotics_intelligent_systems_labs.git
+git clone https://github.com/berito/aau-robotics-labs.git
 ```
 
-A new lab folder is added for every lab session. To get it, pull the repository:
+A folder is added for each new lab. To get it:
 
 ```bash
-cd ~/ros2_ws/src/robotics_intelligent_systems_labs
+cd ~/ros2_ws/src/aau-robotics-labs
 git pull
 ```
 
-colcon finds the packages of every lab in the repository. Build only the lab you are working on, as
-its README shows; for Lab 1:
+## Usage
+
+Each lab folder has a `README.md` (what the lab covers, what it needs, how to run it), an
+`EXERCISE.md` where the lab has one, and its ROS 2 packages.
+
+Build only the lab you are working on; its README names the package:
 
 ```bash
 cd ~/ros2_ws
-colcon build --symlink-install --packages-up-to diffdrive_bot
-source install/setup.bash
+colcon build --symlink-install --packages-up-to <package>
 ```
+
+In every new terminal:
+
+```bash
+source /opt/ros/humble/setup.bash
+source ~/ros2_ws/install/setup.bash
+```
+
+## Getting help
+
+Questions and problems with the labs go to [GitHub Issues](https://github.com/berito/aau-robotics-labs/issues).
 
 ## License
 
-The packages are released under the MIT license.
+[MIT](LICENSE)

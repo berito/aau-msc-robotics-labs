@@ -14,23 +14,17 @@ described in URDF, simulated in Gazebo and driven by Python nodes that use topic
 
 ## Requirements
 
-- Ubuntu 22.04, ROS 2 Humble and Gazebo Harmonic (`ros-humble-ros-gzharmonic`)
-
-The system packages are listed in the [diffdrive_bot README](diffdrive_bot/README.md).
-
-## Installation
+The [course requirements](../README.md#requirements), and:
 
 ```bash
-source /opt/ros/humble/setup.bash
-mkdir -p ~/ros2_ws/src && cd ~/ros2_ws/src
-git clone https://github.com/berito/robotics_intelligent_systems_labs.git
+sudo apt install ros-humble-xacro ros-humble-joint-state-publisher-gui ros-humble-teleop-twist-keyboard
+```
+
+## Build
+
+```bash
 cd ~/ros2_ws
 colcon build --symlink-install --packages-up-to diffdrive_bot
-source install/setup.bash
 ```
 
 Usage is in the [diffdrive_bot README](diffdrive_bot/README.md#usage).
-
-## License
-
-The packages are released under the MIT license.

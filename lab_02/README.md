@@ -6,15 +6,15 @@ sign, a fire hydrant, a suitcase, a chair and a bench.
 
 ## Requirements
 
-- Ubuntu 22.04, ROS 2 Humble and Gazebo Harmonic (`ros-humble-ros-gzharmonic`)
-- `diffdrive_bot` from Lab 1
+- The [course requirements](../README.md#requirements)
+- `diffdrive_bot` from [Lab 1](../lab_01)
 - About 1.5 GB of disk space for the Python environment
 
 ## Installation
 
 ```bash
 sudo apt install python3.10-venv ros-humble-vision-msgs ros-humble-cv-bridge ros-humble-teleop-twist-keyboard
-cd ~/ros2_ws/src/robotics_intelligent_systems_labs
+cd ~/ros2_ws/src/aau-robotics-labs
 git pull
 ./lab_02/setup.sh
 source /opt/ros/humble/setup.bash
@@ -31,7 +31,7 @@ Before running anything, in each terminal:
 ```bash
 source /opt/ros/humble/setup.bash
 source ~/ros2_ws/install/setup.bash
-source ~/ros2_ws/src/robotics_intelligent_systems_labs/lab_02/.venv/bin/activate
+source ~/ros2_ws/src/aau-robotics-labs/lab_02/.venv/bin/activate
 ```
 
 ## Usage
@@ -163,7 +163,3 @@ lab_02/
 | `ModuleNotFoundError: No module named 'ultralytics'` | Activate `lab_02/.venv` |
 | Objects missing in Gazebo | The Fuel download did not finish; wait, then restart the launch |
 | The node downloads the weights when it starts | Run `setup.sh`, then build again |
-
-## License
-
-The packages are released under the MIT license.

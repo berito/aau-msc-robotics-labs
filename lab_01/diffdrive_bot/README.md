@@ -4,37 +4,7 @@ A two-wheeled differential-drive robot with a lidar and a camera, for ROS 2 Humb
 The robot is described in [urdf/diffdrive_bot.urdf.xacro](urdf/diffdrive_bot.urdf.xacro). Python
 nodes drive it using the message, service and action from [lab_interfaces](../lab_interfaces).
 
-## Requirements
-
-- Ubuntu 22.04 with ROS 2 Humble (`ros-humble-desktop`)
-- Gazebo Harmonic, from the Gazebo apt repository:
-
-```bash
-sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
-sudo apt update
-sudo apt install ros-humble-ros-gzharmonic ros-humble-xacro ros-humble-joint-state-publisher-gui ros-humble-teleop-twist-keyboard
-```
-
-Install these with apt, not `rosdep install`: rosdep pulls in `ros-humble-ros-gz`, which conflicts
-with Harmonic.
-
-## Installation
-
-```bash
-source /opt/ros/humble/setup.bash
-mkdir -p ~/ros2_ws/src && cd ~/ros2_ws/src
-git clone https://github.com/berito/robotics_intelligent_systems_labs.git
-cd ~/ros2_ws
-colcon build --symlink-install --packages-up-to diffdrive_bot
-```
-
-In each terminal:
-
-```bash
-source /opt/ros/humble/setup.bash
-source ~/ros2_ws/install/setup.bash
-```
+Build and requirements: [Lab 1 README](../README.md).
 
 ## Usage
 
@@ -219,7 +189,3 @@ odom -> base_footprint -> base_link -> left_wheel, right_wheel, caster, lidar_li
 | `/obstacle` not found | Check `control.launch.py` is running; try `ros2 daemon stop` |
 | Gazebo will not start, or two robots appear | `pkill -f "gz sim"` |
 | URDF change does not show up | Restart the launch; without `--symlink-install`, rebuild |
-
-## License
-
-The package is released under the MIT license.
