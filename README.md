@@ -11,17 +11,21 @@ assistant: Mohammed Sraj.
 
 ## Labs
 
-1. [Lab 1: ROS 2 and custom robot simulation](lab_01)
+- [Lab 1: ROS 2 and custom robot simulation](lab_01)
    - ROS 2 concepts on turtlesim: nodes, topics, services, parameters, actions, launch files
    - A differential-drive robot with a lidar and a camera, described in URDF and simulated in Gazebo
    - Python nodes that use a custom message, service and action
-2. [Lab 2: Perception, sensor fusion and SLAM](lab_02)
+- [Lab 2: Perception, sensor fusion and SLAM](lab_02)
    - Object detection and segmentation with pretrained YOLOv8 models on the robot's camera
    - Detections and masks published as ROS 2 messages and shown in RViz
    - A safety stop that halts the robot when an object is in its path
-3. [Lab 3: Motion planning and control](lab_03)
+- [Lab 3: Motion planning and control](lab_03)
    - Pick-and-place with a Franka FR3 arm and MoveIt 2, on mock hardware and in Gazebo
    - Joint-space goals, pose goals, Cartesian paths and attached collision objects
+- [Lab 5: Human-robot interaction](lab_05) (under development)
+   - Spoken commands recognized offline with Vosk
+   - Hand gestures recognized on the webcam with MediaPipe
+   - The Lab 1 robot driven in Gazebo by voice and by hand
 
 ## Prerequisites
 

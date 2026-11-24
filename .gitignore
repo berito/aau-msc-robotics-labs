@@ -10,6 +10,8 @@ __pycache__/
 
 # Model weights, downloaded by each lab's setup script
 *.pt
+*.task
+vosk-model-*/
 
 # Editor settings and indexes, specific to each machine
 .vscode/

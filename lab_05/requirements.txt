@@ -1,0 +1,6 @@
+# mediapipe 0.10.21 needs NumPy 1; opencv 4.12+ needs NumPy 2
+mediapipe==0.10.21
+numpy<2
+opencv-contrib-python<4.12
+vosk
+sounddevice
