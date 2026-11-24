@@ -19,6 +19,7 @@ assistant: Mohammed Sraj.
    - Object detection and segmentation with pretrained YOLOv8 models on the robot's camera
    - Detections and masks published as ROS 2 messages and shown in RViz
    - A safety stop that halts the robot when an object is in its path
+   - A TurtleBot3 Burger mapping a world with slam_toolbox
 - [Lab 3: Motion planning and control](lab_03)
    - Pick-and-place with a Franka FR3 arm and MoveIt 2, on mock hardware and in Gazebo
    - Joint-space goals, pose goals, Cartesian paths and attached collision objects
@@ -26,6 +27,9 @@ assistant: Mohammed Sraj.
    - Spoken commands recognized offline with Vosk
    - Hand gestures recognized on the webcam with MediaPipe
    - The Lab 1 robot driven in Gazebo by voice and by hand
+- [Lab 6: Localization and navigation](lab_06)
+   - AMCL localization on the map from Lab 2
+   - Navigation to goals with Nav2
 
 ## Prerequisites
 

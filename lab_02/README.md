@@ -2,7 +2,8 @@
 
 Object detection and segmentation on `diffdrive_bot`'s camera with pretrained YOLOv8 models, and a node
 that stops the robot when an object is in its way. The robot drives in a room with a person, a stop
-sign, a fire hydrant, a suitcase, a chair and a bench.
+sign, a fire hydrant, a suitcase, a chair and a bench. A TurtleBot3 Burger then maps
+`turtlebot3_world` with `slam_toolbox`.
 
 ## Requirements
 
@@ -105,6 +106,16 @@ ros2 run robot_perception yolo_on_image.py frame_0.png --model yolov8n-seg.pt
 ```
 
 The script prints the detections and writes `detections.png` with them drawn.
+
+## SLAM
+
+[turtlebot3_sim](turtlebot3_sim): a TurtleBot3 Burger in `turtlebot3_world`, mapped with
+`slam_toolbox`. Installation, mapping and saving the map are in its
+[README](turtlebot3_sim/README.md#mapping).
+
+```bash
+ros2 launch turtlebot3_sim mapping.launch.py
+```
 
 ## Package layout
 
