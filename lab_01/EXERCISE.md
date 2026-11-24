@@ -38,8 +38,8 @@ Create the folder and copy the lab packages into it:
 ```bash
 cd ~/ros2_ws/src
 mkdir lab1_exercise
-cp -r aau-robotics-labs/lab_01/diffdrive_bot aau-robotics-labs/lab_01/lab_interfaces lab1_exercise/
-touch aau-robotics-labs/lab_01/COLCON_IGNORE
+cp -r aau-msc-robotics-labs/lab_01/diffdrive_bot aau-msc-robotics-labs/lab_01/lab_interfaces lab1_exercise/
+touch aau-msc-robotics-labs/lab_01/COLCON_IGNORE
 ```
 
 colcon refuses to build two packages with the same name, so the `COLCON_IGNORE` file tells it to skip

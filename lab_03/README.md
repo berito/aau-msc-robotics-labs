@@ -18,7 +18,7 @@ workspace, next to the course workspace from the [course installation](../README
   franka_ros2_ws/                 Franka workspace, created in the steps below
     src/                          franka_ros2, its dependencies and gz_ros2_control
   ros2_ws/                        course workspace
-    src/aau-robotics-labs/        this repository
+    src/aau-msc-robotics-labs/    this repository
       lab_03/fr3_pick_place/      the lab package
 ```
 
@@ -82,7 +82,7 @@ marker at the gripper and click **Plan & Execute**: the arm moves to the new pos
 ```bash
 source /opt/ros/humble/setup.bash
 source ~/franka_ros2_ws/install/setup.bash
-cd ~/ros2_ws/src/aau-robotics-labs
+cd ~/ros2_ws/src/aau-msc-robotics-labs
 git pull
 cd ~/ros2_ws
 colcon build --symlink-install --packages-up-to fr3_pick_place

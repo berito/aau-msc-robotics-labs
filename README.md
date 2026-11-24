@@ -50,13 +50,13 @@ Each lab's README lists the packages it adds.
 ```bash
 source /opt/ros/humble/setup.bash
 mkdir -p ~/ros2_ws/src && cd ~/ros2_ws/src
-git clone https://github.com/berito/aau-robotics-labs.git
+git clone https://github.com/berito/aau-msc-robotics-labs.git
 ```
 
 A folder is added for each new lab. To get it:
 
 ```bash
-cd ~/ros2_ws/src/aau-robotics-labs
+cd ~/ros2_ws/src/aau-msc-robotics-labs
 git pull
 ```
 
@@ -81,7 +81,7 @@ source ~/ros2_ws/install/setup.bash
 
 ## Getting help
 
-Questions and problems with the labs go to [GitHub Issues](https://github.com/berito/aau-robotics-labs/issues).
+Questions and problems with the labs go to [GitHub Issues](https://github.com/berito/aau-msc-robotics-labs/issues).
 
 ## License
 

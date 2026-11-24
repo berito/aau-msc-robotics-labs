@@ -14,7 +14,7 @@ sign, a fire hydrant, a suitcase, a chair and a bench.
 
 ```bash
 sudo apt install python3.10-venv ros-humble-vision-msgs ros-humble-cv-bridge ros-humble-teleop-twist-keyboard
-cd ~/ros2_ws/src/aau-robotics-labs
+cd ~/ros2_ws/src/aau-msc-robotics-labs
 git pull
 ./lab_02/setup.sh
 source /opt/ros/humble/setup.bash
@@ -31,7 +31,7 @@ Before running anything, in each terminal:
 ```bash
 source /opt/ros/humble/setup.bash
 source ~/ros2_ws/install/setup.bash
-source ~/ros2_ws/src/aau-robotics-labs/lab_02/.venv/bin/activate
+source ~/ros2_ws/src/aau-msc-robotics-labs/lab_02/.venv/bin/activate
 ```
 
 ## Usage
