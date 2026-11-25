@@ -1,0 +1,5 @@
+gymnasium[mujoco]==1.4.0
+mujoco==3.17.0
+stable-baselines3==2.9.2
+tensorboard==2.21.0
+opencv-python==5.1.0.95
