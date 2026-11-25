@@ -1,7 +1,5 @@
 # Lab 5: Human-Robot Interaction
 
-**Status:** under development.
-
 `diffdrive_bot` from Lab 1 driven in Gazebo by voice and by hand. Spoken commands are recognized
 offline with Vosk, and hand gestures on the webcam with MediaPipe. Both give the same five commands:
 forward, back, left, right and stop.

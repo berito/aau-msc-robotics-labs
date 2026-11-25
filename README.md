@@ -29,7 +29,7 @@ assistant: Mohammed Sraj.
    - Learning curves in TensorBoard and the trained policies in the MuJoCo viewer
 
      <a href="https://youtu.be/8dkFIp1XXiU"><img src="https://img.youtube.com/vi/8dkFIp1XXiU/maxresdefault.jpg" alt="Lab 4 demo" width="400"></a>
-- [Lab 5: Human-robot interaction](lab_05) (under development)
+- [Lab 5: Human-robot interaction](lab_05)
    - Spoken commands recognized offline with Vosk
    - Hand gestures recognized on the webcam with MediaPipe
    - The Lab 1 robot driven in Gazebo by voice and by hand
