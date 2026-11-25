@@ -23,6 +23,9 @@ assistant: Mohammed Sraj.
 - [Lab 3: Motion planning and control](lab_03)
    - Pick-and-place with a Franka FR3 arm and MoveIt 2, on mock hardware and in Gazebo
    - Joint-space goals, pose goals, Cartesian paths and attached collision objects
+- [Lab 4: Reinforcement learning](lab_04)
+   - A MuJoCo Hopper trained to hop with PPO from Stable-Baselines3
+   - Learning curves in TensorBoard and the trained policy in the MuJoCo viewer
 - [Lab 5: Human-robot interaction](lab_05) (under development)
    - Spoken commands recognized offline with Vosk
    - Hand gestures recognized on the webcam with MediaPipe

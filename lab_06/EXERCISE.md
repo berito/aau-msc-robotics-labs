@@ -66,11 +66,3 @@ ros2 launch turtlebot3_sim navigation.launch.py map:=$HOME/ros2_ws/src/lab6_exer
 ```
 
 **Check.** RViz shows your map, and the patrol from Step 3 runs on it.
-
-## Hand in
-
-Make your `lab6_exercise` folder a Git repository and push it to GitHub. It holds your copy of
-`robot_navigation` and your map. Add a README that says how to run each step, a screenshot of RViz
-for Step 1 before and after the particles gather, and a short video of the patrol driving around the
-box. Write what did not work and why you think so. Share your exercise by sending the GitHub URL of
-this repository.

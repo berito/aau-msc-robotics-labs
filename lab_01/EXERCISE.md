@@ -31,7 +31,7 @@ You need the Python versions of these official ROS 2 tutorials, listed on the do
 
 You do the whole exercise in a folder of your own, `lab1_exercise`, in the `src` folder of your
 workspace. It holds your own copy of the two lab packages, diffdrive_bot and lab_interfaces, which
-you change and use, and the two packages you write. This folder is what you hand in at the end.
+you change and use, and the two packages you write.
 
 Create the folder and copy the lab packages into it:
 
@@ -290,12 +290,3 @@ ros2 launch my_robot_nodes square.launch.py side_length:=0.8
 ```
 
 From the start position there is room for a square of up to 1 m a side.
-
-## Hand in
-
-Make your `lab1_exercise` folder a Git repository and push it to GitHub. It holds four packages: your
-changed diffdrive_bot, lab_interfaces, `my_robot_interfaces` and `my_robot_nodes`, so it builds on its
-own in the `src` folder of any workspace. Add a README that says how to build the packages and how to
-run each step. Add a screenshot of RViz showing the depth image and point
-cloud from Step 1, and a screenshot of `rqt_graph` while `square.launch.py` runs. Write what did not
-work and why you think so. Share your exercise by sending the GitHub URL of this repository.

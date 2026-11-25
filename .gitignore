@@ -26,3 +26,7 @@ frames*.gv
 # Operating system files
 .DS_Store
 Thumbs.db
+
+# TensorBoard logs and MuJoCo error logs written by the Lab 4 scripts
+runs/
+MUJOCO_LOG.TXT

@@ -150,11 +150,3 @@ Write `arm_hri.launch.py`. It starts the arm on mock hardware, the speech and ge
 layout, and `arm_commands`.
 
 **Check.** One command starts everything, and the arm can be run by voice and by hand.
-
-## Hand in
-
-Make your `lab5_exercise` folder a Git repository and push it to GitHub. Add a README that says how to
-build and run each part, and three short videos: the robot driven by the new gestures (Part 1), by the
-new words (Part 2), and the arm picking the cubes on a spoken command and stopping on an open palm
-(Part 3). Write what did not work and why you think so. Share your exercise by sending the GitHub URL
-of this repository.
